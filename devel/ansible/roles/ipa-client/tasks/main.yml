@@ -44,7 +44,7 @@
   ignore_errors: yes
 
 - name: Create the service in IPA
-  command: ipa service-add MATRIXBOTS/matrixbots.tinystage.test
+  command: ipa service-add --force MATRIXBOTS/matrixbots.tinystage.test
 
 - name: Get service keytab for NONBOT
   shell: ipa-getkeytab -p MATRIXBOTS/matrixbots.tinystage.test@{{ krb_realm }} -k /var/lib/gssproxy/matrixbots.keytab
